@@ -1,0 +1,70 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+>
+<f:section name="main">
+    <div
+        class="mai-testimonials mai-testimonials--slider"
+        data-testimonials-slider="1"
+        aria-label="{f:translate(key: 'slider.prev', extensionName: 'mai_testimonials')}"
+    >
+        <f:if condition="{testimonials}">
+            <f:then>
+                <div class="mai-testimonials__track" data-testimonials-track="1">
+                    <f:for each="{testimonials}" as="testimonial" iteration="i">
+                        <div
+                            class="mai-testimonials__slide{f:if(condition: i.isFirst, then: ' mai-testimonials__slide--active')}"
+                            data-testimonials-slide="{i.index}"
+                            aria-hidden="{f:if(condition: i.isFirst, then: 'false', else: 'true')}"
+                        >
+                            <blockquote class="mai-testimonial">
+                                <p class="mai-testimonial__quote">{testimonial.quote}</p>
+                                <footer class="mai-testimonial__footer">
+                                    <f:if condition="{testimonial.firstPortrait}">
+                                        <f:image
+                                            image="{testimonial.firstPortrait}"
+                                            alt="{testimonial.authorName}"
+                                            class="mai-testimonial__portrait"
+                                            width="80"
+                                            height="80"
+                                        />
+                                    </f:if>
+                                    <cite class="mai-testimonial__author">
+                                        <span class="mai-testimonial__name">{testimonial.authorName}</span>
+                                        <f:if condition="{testimonial.authorRole}">
+                                            <span class="mai-testimonial__role">{testimonial.authorRole}</span>
+                                        </f:if>
+                                        <f:if condition="{testimonial.organisation}">
+                                            <span class="mai-testimonial__organisation">{testimonial.organisation}</span>
+                                        </f:if>
+                                    </cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </f:for>
+                </div>
+
+                <div class="mai-testimonials__controls">
+                    <button
+                        type="button"
+                        class="mai-testimonials__btn mai-testimonials__btn--prev"
+                        data-testimonials-prev="1"
+                        aria-label="{f:translate(key: 'slider.prev', extensionName: 'mai_testimonials')}"
+                    >&#8249;</button>
+                    <button
+                        type="button"
+                        class="mai-testimonials__btn mai-testimonials__btn--next"
+                        data-testimonials-next="1"
+                        aria-label="{f:translate(key: 'slider.next', extensionName: 'mai_testimonials')}"
+                    >&#8250;</button>
+                </div>
+            </f:then>
+            <f:else>
+                <p class="mai-testimonials__empty">
+                    <f:translate key="testimonials.noItems" extensionName="mai_testimonials"/>
+                </p>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+</html>

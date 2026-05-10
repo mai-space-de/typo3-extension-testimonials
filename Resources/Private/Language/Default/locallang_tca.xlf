@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="messages" date="2024-01-01T00:00:00Z" product-name="mai_testimonials">
+        <header/>
+        <body>
+            <trans-unit id="table.tx_maitestimonials_testimonial">
+                <source>Testimonial</source>
+            </trans-unit>
+            <trans-unit id="tx_maitestimonials_testimonial.quote">
+                <source>Quote</source>
+            </trans-unit>
+            <trans-unit id="tx_maitestimonials_testimonial.author_name">
+                <source>Author Name</source>
+            </trans-unit>
+            <trans-unit id="tx_maitestimonials_testimonial.author_role">
+                <source>Role / Title</source>
+            </trans-unit>
+            <trans-unit id="tx_maitestimonials_testimonial.organisation">
+                <source>Organisation</source>
+            </trans-unit>
+            <trans-unit id="tx_maitestimonials_testimonial.portrait">
+                <source>Portrait Image</source>
+            </trans-unit>
+            <trans-unit id="tx_maitestimonials_testimonial.categories">
+                <source>Categories</source>
+            </trans-unit>
+            <trans-unit id="tab.language">
+                <source>Language</source>
+            </trans-unit>
+            <trans-unit id="tab.access">
+                <source>Access</source>
+            </trans-unit>
+            <trans-unit id="ctype.testimonials_list">
+                <source>Testimonials: Grid</source>
+            </trans-unit>
+            <trans-unit id="ctype.testimonials_slider">
+                <source>Testimonials: Slider</source>
+            </trans-unit>
+            <trans-unit id="ctype.testimonials_single">
+                <source>Testimonials: Single</source>
+            </trans-unit>
+            <trans-unit id="plugin.list.title">
+                <source>Testimonials: Grid</source>
+            </trans-unit>
+            <trans-unit id="plugin.slider.title">
+                <source>Testimonials: Slider</source>
+            </trans-unit>
+            <trans-unit id="plugin.single.title">
+                <source>Testimonials: Single</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.general">
+                <source>General</source>
+            </trans-unit>
+            <trans-unit id="flexform.field.pages">
+                <source>Storage Pages</source>
+            </trans-unit>
+            <trans-unit id="flexform.field.categoryUids">
+                <source>Filter by Category</source>
+            </trans-unit>
+            <trans-unit id="flexform.field.limit">
+                <source>Maximum Items (0 = all)</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

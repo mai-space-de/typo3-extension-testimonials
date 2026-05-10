@@ -1,17 +1,20 @@
-## Testimonial Records
+# Features
 
-* Testimonial records — structured records with quote text, author name, role, organisation, and portrait image
-* Category assignment — group testimonials by `sys_category` for selective display
-* FAL images — portrait photos managed via TYPO3 File Abstraction Layer
+## Implemented
 
-## Display Layouts
+- [ ] Testimonial record (quote, author name, role, organisation, portrait FAL, sys_category)
+- [ ] `TestimonialsController` with `listAction`, `sliderAction`, `singleAction`
+- [ ] TCA for `tx_maitestimonials_testimonial`
+- [ ] Three content element registrations: List/Grid, Slider, Single
+- [ ] FlexForm with storage pages and category filter
+- [ ] TypoScript setup and constants
+- [ ] TYPO3 Site Set (`maispace/mai-testimonials`)
+- [ ] Language files: EN + DE
 
-* Slider layout — auto-playing or manually navigated testimonial carousel
-* Grid layout — responsive grid of testimonial cards
-* Single quote — featured single testimonial content element
+## Planned
 
-## Story Wall Integration
-
-* Community testimonials — "1 Jahr in Deutschland" personal quotes from community members
-* Slider on home page and grid on the dedicated story wall page
-* Published entries fed from `mai_account` story wall moderation queue
+- [ ] Story Wall: community testimonials from `mai_account` moderation queue
+- [ ] JavaScript auto-play carousel
+- [ ] CSS animations and transitions
+- [ ] Schema.org markup (Review/Testimonial)
+- [ ] Pagination support for grid layout

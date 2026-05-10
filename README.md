@@ -1,13 +1,21 @@
-# maispace/mai-testimonials — TYPO3 Extension
-[![PHP](https://img.shields.io/badge/PHP-8.5%2B-blue)](https://www.php.net/)
-[![TYPO3](https://img.shields.io/badge/TYPO3-14.1-orange)](https://typo3.org/)
-[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+# Mai Testimonials
 
-Testimonial records with author name, quote, role, image, and optional star rating. Categories use TYPO3 sys_category.
+TYPO3 extension providing testimonial content elements with slider, grid, and single-quote layouts.
 
-**Requires:** TYPO3 14.1 · PHP 8.5+
+## Features
 
----
+- Testimonial records with quote, author name, role, organisation, portrait image (FAL), and sys_category
+- Auto-playing carousel / slider layout
+- Responsive card grid layout
+- Featured single-quote layout
+- Category filtering
+- Story Wall: community testimonials from `mai_account` moderation queue
+
+## Requirements
+
+- TYPO3 >= 14.1
+- PHP >= 8.2
+- `maispace/mai-base`
 
 ## Installation
 
@@ -15,26 +23,20 @@ Testimonial records with author name, quote, role, image, and optional star rati
 composer require maispace/mai-testimonials
 ```
 
----
+## Usage
+
+Add one of the provided content elements to your page:
+
+- **Testimonials: Slider** – auto-playing carousel of testimonials
+- **Testimonials: Grid** – responsive card grid
+- **Testimonials: Single** – featured single quote
 
 ## Development
 
-### Linting
+Run QA tools from within the extension directory:
 
 ```bash
-composer lint:check     # Run all linters
-composer lint:fix       # Fix auto-fixable issues
+composer lint:check
+composer lint:fix
+composer test:unit
 ```
-
-### Testing
-
-```bash
-composer test           # Run all tests
-composer test:unit      # Run unit tests only
-```
-
----
-
-## License
-
-GPL-2.0-or-later — see [LICENSE](../../LICENSE) for details.

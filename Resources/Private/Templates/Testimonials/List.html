@@ -1,0 +1,47 @@
+<html
+    data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+>
+<f:section name="main">
+    <div class="mai-testimonials mai-testimonials--grid">
+        <f:if condition="{testimonials}">
+            <f:then>
+                <ul class="mai-testimonials__list">
+                    <f:for each="{testimonials}" as="testimonial">
+                        <li class="mai-testimonials__item">
+                            <blockquote class="mai-testimonial">
+                                <p class="mai-testimonial__quote">{testimonial.quote}</p>
+                                <footer class="mai-testimonial__footer">
+                                    <f:if condition="{testimonial.firstPortrait}">
+                                        <f:image
+                                            image="{testimonial.firstPortrait}"
+                                            alt="{testimonial.authorName}"
+                                            class="mai-testimonial__portrait"
+                                            width="80"
+                                            height="80"
+                                        />
+                                    </f:if>
+                                    <cite class="mai-testimonial__author">
+                                        <span class="mai-testimonial__name">{testimonial.authorName}</span>
+                                        <f:if condition="{testimonial.authorRole}">
+                                            <span class="mai-testimonial__role">{testimonial.authorRole}</span>
+                                        </f:if>
+                                        <f:if condition="{testimonial.organisation}">
+                                            <span class="mai-testimonial__organisation">{testimonial.organisation}</span>
+                                        </f:if>
+                                    </cite>
+                                </footer>
+                            </blockquote>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:then>
+            <f:else>
+                <p class="mai-testimonials__empty">
+                    <f:translate key="testimonials.noItems" extensionName="mai_testimonials"/>
+                </p>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+</html>

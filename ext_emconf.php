@@ -1,12 +1,12 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Mai Testimonials',
-    'description' => 'Testimonial records with author name, quote, role, image, and optional star rating. Categories use TYPO3 sys_category.',
+    'description' => 'Testimonials extension with slider, grid, and single-quote layouts. Records store quote text, author name, role, organisation, portrait image (FAL), and sys_category. Supports category filtering and a Story Wall for community testimonials.',
     'category' => 'module',
     'author' => 'Maispace',
     'author_email' => '',
-    'state' => 'stable',
-    'version' => '1.0.0',
+    'state' => 'alpha',
+    'version' => '0.1.0',
     'constraints' => [
         'depends' => [
             'typo3' => '13.4.0-14.99.99',

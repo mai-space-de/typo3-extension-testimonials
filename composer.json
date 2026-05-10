@@ -1,6 +1,6 @@
 {
     "name": "maispace/mai-testimonials",
-    "description": "Testimonial records with author name, quote, role, image, and optional star rating. Categories use TYPO3 sys_category.",
+    "description": "Testimonials extension with slider, grid, and single-quote layouts. Records store quote text, author name, role, organisation, portrait image (FAL), and sys_category. Supports category filtering and a Story Wall for community testimonials.",
     "type": "typo3-cms-extension",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -9,6 +9,12 @@
             "role": "Developer"
         }
     ],
+    "require": {
+        "maispace/mai-base": "@dev",
+        "typo3/cms-core": "^14.1",
+        "typo3/cms-extbase": "^14.1",
+        "typo3/cms-fluid": "^14.1"
+    },
     "autoload": {
         "psr-4": {
             "Maispace\\MaiTestimonials\\": "Classes"
