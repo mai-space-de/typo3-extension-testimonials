@@ -9,18 +9,18 @@ return [
     ],
     'tx_maitestimonials_testimonial' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:mai_testimonials/Resources/Public/Icons/tx_maitestimonials_testimonial.svg',
+        'source' => 'EXT:mai_base/Resources/Public/Icons/generic_table.svg',
     ],
     'maispace_testimonials_slider' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:mai_testimonials/Resources/Public/Icons/ContentElement/TestimonialsSlider.svg',
+        'source' => 'EXT:mai_base/Resources/Public/Icons/generic_content.svg',
     ],
     'maispace_testimonials_list' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:mai_testimonials/Resources/Public/Icons/ContentElement/TestimonialsGrid.svg',
+        'source' => 'EXT:mai_base/Resources/Public/Icons/generic_content.svg',
     ],
     'maispace_testimonials_single' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:mai_testimonials/Resources/Public/Icons/ContentElement/TestimonialsSingle.svg',
+        'source' => 'EXT:mai_base/Resources/Public/Icons/generic_content.svg',
     ],
 ];

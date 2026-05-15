@@ -13,7 +13,7 @@ $lang = Helper::localLangHelperFactory('mai_testimonials', 'Default/locallang_tc
     'MaiTestimonials',
     'List',
     $lang('plugin.list.title'),
-    'maispace_testimonials_list',
+    'mai-content',
     'maispace_feature',
 );
 
@@ -21,7 +21,7 @@ $lang = Helper::localLangHelperFactory('mai_testimonials', 'Default/locallang_tc
     'MaiTestimonials',
     'Slider',
     $lang('plugin.slider.title'),
-    'maispace_testimonials_slider',
+    'mai-content',
     'maispace_feature',
 );
 
@@ -29,11 +29,11 @@ $lang = Helper::localLangHelperFactory('mai_testimonials', 'Default/locallang_tc
     'MaiTestimonials',
     'Single',
     $lang('plugin.single.title'),
-    'maispace_testimonials_single',
+    'mai-content',
     'maispace_feature',
 );
 
-(new CType('maispace_testimonials_list', $lang('ctype.testimonials_list'), 'maispace_testimonials_list'))
+(new CType('maispace_testimonials_list', $lang('ctype.testimonials_list'), 'mai-content'))
     ->addDefaultHeaderPalette()
     ->addCustomFields('pi_flexform')
     ->addDefaultLanguageTab()
@@ -41,7 +41,7 @@ $lang = Helper::localLangHelperFactory('mai_testimonials', 'Default/locallang_tc
     ->setGroup('maispace_feature')
     ->register();
 
-(new CType('maispace_testimonials_slider', $lang('ctype.testimonials_slider'), 'maispace_testimonials_slider'))
+(new CType('maispace_testimonials_slider', $lang('ctype.testimonials_slider'), 'mai-content'))
     ->addDefaultHeaderPalette()
     ->addCustomFields('pi_flexform')
     ->addDefaultLanguageTab()
@@ -49,7 +49,7 @@ $lang = Helper::localLangHelperFactory('mai_testimonials', 'Default/locallang_tc
     ->setGroup('maispace_feature')
     ->register();
 
-(new CType('maispace_testimonials_single', $lang('ctype.testimonials_single'), 'maispace_testimonials_single'))
+(new CType('maispace_testimonials_single', $lang('ctype.testimonials_single'), 'mai-content'))
     ->addDefaultHeaderPalette()
     ->addCustomFields('pi_flexform')
     ->addDefaultLanguageTab()

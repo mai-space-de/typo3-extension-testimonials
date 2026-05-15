@@ -15,7 +15,7 @@ return (new Table($lang('table.tx_maitestimonials_testimonial')))
     ->setSearchFields('quote,author_name,organisation')
     ->setDefaultConfig()
     ->setLabel('author_name')
-    ->setIconFile('EXT:mai_testimonials/Resources/Public/Icons/tx_maitestimonials_testimonial.svg')
+    ->setIconFile('EXT:mai_base/Resources/Public/Icons/generic_table.svg')
     ->setSortingField()
     ->addColumn(
         'quote',
@@ -40,7 +40,7 @@ return (new Table($lang('table.tx_maitestimonials_testimonial')))
     ->addColumn(
         'portrait',
         $lang('tx_maitestimonials_testimonial.portrait'),
-        (new FileConfig())->setMaxItems(1)->setAllowedFileExtensions(['jpg', 'jpeg', 'png', 'webp', 'svg'])
+        (new FileConfig())->setMaxItems(1)->setAllowed('jpg,jpeg,png,webp,svg')
     )
     ->addColumn(
         'categories',
