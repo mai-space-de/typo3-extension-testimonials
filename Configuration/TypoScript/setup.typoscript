@@ -1,25 +1,27 @@
-plugin.tx_maitestimonials_list {
-    view {
-        templateRootPaths {
-            0 = EXT:mai_testimonials/Resources/Private/Templates/
-            10 = {$plugin.tx_maitestimonials_list.view.templateRootPath}
+plugin {
+    tx_maitestimonials_list {
+        view {
+            templateRootPaths {
+                0 = EXT:mai_testimonials/Resources/Private/Templates/
+                10 = {$plugin.tx_maitestimonials_list.view.templateRootPath}
+            }
+            partialRootPaths {
+                0 = EXT:mai_testimonials/Resources/Private/Partials/
+                10 = {$plugin.tx_maitestimonials_list.view.partialRootPath}
+            }
+            layoutRootPaths {
+                0 = EXT:mai_testimonials/Resources/Private/Layouts/
+                10 = {$plugin.tx_maitestimonials_list.view.layoutRootPath}
+            }
         }
-        partialRootPaths {
-            0 = EXT:mai_testimonials/Resources/Private/Partials/
-            10 = {$plugin.tx_maitestimonials_list.view.partialRootPath}
+        persistence {
+            storagePid = {$plugin.tx_maitestimonials_list.persistence.storagePid}
         }
-        layoutRootPaths {
-            0 = EXT:mai_testimonials/Resources/Private/Layouts/
-            10 = {$plugin.tx_maitestimonials_list.view.layoutRootPath}
+        settings {
+            limit = 0
         }
     }
-    persistence {
-        storagePid = {$plugin.tx_maitestimonials_list.persistence.storagePid}
-    }
-    settings {
-        limit = 0
-    }
-}
 
-plugin.tx_maitestimonials_slider < plugin.tx_maitestimonials_list
-plugin.tx_maitestimonials_single < plugin.tx_maitestimonials_list
+    tx_maitestimonials_slider < plugin.tx_maitestimonials_list
+    tx_maitestimonials_single < plugin.tx_maitestimonials_list
+}
