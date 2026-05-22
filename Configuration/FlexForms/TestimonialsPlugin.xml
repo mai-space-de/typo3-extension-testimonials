@@ -20,15 +20,15 @@
                             </config>
                         </TCEforms>
                     </settings.pages>
-                    <settings.categoryUids>
+                    <settings.categoryUid>
                         <TCEforms>
                             <label>LLL:EXT:mai_testimonials/Resources/Private/Language/Default/locallang_tca.xlf:flexform.field.categoryUids</label>
                             <config>
                                 <type>category</type>
-                                <relationship>manyToMany</relationship>
+                                <relationship>manyToOne</relationship>
                             </config>
                         </TCEforms>
-                    </settings.categoryUids>
+                    </settings.categoryUid>
                     <settings.limit>
                         <TCEforms>
                             <label>LLL:EXT:mai_testimonials/Resources/Private/Language/Default/locallang_tca.xlf:flexform.field.limit</label>

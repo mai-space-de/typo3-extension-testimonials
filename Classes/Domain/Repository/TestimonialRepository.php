@@ -15,31 +15,48 @@ class TestimonialRepository extends Repository
         'sorting' => QueryInterface::ORDER_ASCENDING,
     ];
 
-    public function findByCategoryUid(int $categoryUid): QueryResultInterface
+    public function findAllLimited(int $limit): QueryResultInterface
+    {
+        $query = $this->createQuery();
+        $query->setLimit($limit);
+
+        return $query->execute();
+    }
+
+    public function findByCategoryUid(int $categoryUid, int $limit = 0): QueryResultInterface
     {
         $query = $this->createQuery();
         $query->matching(
             $query->contains('categories', $categoryUid),
         );
+        if ($limit > 0) {
+            $query->setLimit($limit);
+        }
 
         return $query->execute();
     }
 
-    public function findFromPages(array $pageUids): QueryResultInterface
+    public function findFromPages(array $pageUids, int $limit = 0): QueryResultInterface
     {
         $query = $this->createQuery();
         $query->getQuerySettings()->setStoragePageIds($pageUids);
+        if ($limit > 0) {
+            $query->setLimit($limit);
+        }
 
         return $query->execute();
     }
 
-    public function findFromPagesByCategoryUid(array $pageUids, int $categoryUid): QueryResultInterface
+    public function findFromPagesByCategoryUid(array $pageUids, int $categoryUid, int $limit = 0): QueryResultInterface
     {
         $query = $this->createQuery();
         $query->getQuerySettings()->setStoragePageIds($pageUids);
         $query->matching(
             $query->contains('categories', $categoryUid),
         );
+        if ($limit > 0) {
+            $query->setLimit($limit);
+        }
 
         return $query->execute();
     }

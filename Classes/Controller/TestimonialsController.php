@@ -88,17 +88,22 @@ class TestimonialsController extends AbstractActionController
     {
         $pageUids = $this->resolveStoragePageUids();
         $categoryUid = (int) ($settings['categoryUid'] ?? 0);
+        $limit = (int) ($settings['limit'] ?? 0);
 
         if ($pageUids !== [] && $categoryUid > 0) {
-            return $this->testimonialRepository->findFromPagesByCategoryUid($pageUids, $categoryUid);
+            return $this->testimonialRepository->findFromPagesByCategoryUid($pageUids, $categoryUid, $limit);
         }
 
         if ($pageUids !== []) {
-            return $this->testimonialRepository->findFromPages($pageUids);
+            return $this->testimonialRepository->findFromPages($pageUids, $limit);
         }
 
         if ($categoryUid > 0) {
-            return $this->testimonialRepository->findByCategoryUid($categoryUid);
+            return $this->testimonialRepository->findByCategoryUid($categoryUid, $limit);
+        }
+
+        if ($limit > 0) {
+            return $this->testimonialRepository->findAllLimited($limit);
         }
 
         return $this->testimonialRepository->findAll();
