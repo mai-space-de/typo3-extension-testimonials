@@ -20,7 +20,7 @@ return (new Table($lang('table.tx_maitestimonials_testimonial')))
     ->addColumn(
         'quote',
         $lang('tx_maitestimonials_testimonial.quote'),
-        (new TextConfig())->setRows(5)->setCols(50)->setRequired()
+        (new TextConfig())->setRows(5)->setCols(50)->setRequired()->enableRte()->setRichtextConfiguration('default')
     )
     ->addColumn(
         'author_name',
