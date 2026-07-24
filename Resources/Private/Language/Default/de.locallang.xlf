@@ -11,6 +11,10 @@
                 <source>— {0}, {1}</source>
                 <target>— {0}, {1}</target>
             </trans-unit>
+            <trans-unit id="slider.region">
+                <source>Testimonial slider</source>
+                <target>Referenzen-Slider</target>
+            </trans-unit>
             <trans-unit id="slider.prev">
                 <source>Previous testimonial</source>
                 <target>Vorherige Referenz</target>

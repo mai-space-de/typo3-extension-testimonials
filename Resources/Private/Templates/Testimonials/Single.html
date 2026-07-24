@@ -2,8 +2,12 @@
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 >
+<f:layout name="Default"/>
 <f:section name="main">
     <div class="mai-testimonials mai-testimonials--single">
+        <f:if condition="{data.header}">
+            <h2 class="mai-testimonials__title">{data.header}</h2>
+        </f:if>
         <f:if condition="{testimonial}">
             <f:then>
                 <blockquote class="mai-testimonial mai-testimonial--featured">

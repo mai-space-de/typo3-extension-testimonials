@@ -2,12 +2,19 @@
     data-namespace-typo3-fluid="true"
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 >
+<f:layout name="Default"/>
 <f:section name="main">
+    <f:variable name="sliderRegionLabel"><f:translate key="slider.region" extensionName="mai_testimonials" /></f:variable>
+    <f:variable name="sliderLabel" value="{f:if(condition: data.header, then: data.header, else: sliderRegionLabel)}" />
     <div
         class="mai-testimonials mai-testimonials--slider"
         data-testimonials-slider="1"
-        aria-label="{f:translate(key: 'slider.prev', extensionName: 'mai_testimonials')}"
+        role="region"
+        aria-label="{sliderLabel}"
     >
+        <f:if condition="{data.header}">
+            <h2 class="mai-testimonials__title">{data.header}</h2>
+        </f:if>
         <f:if condition="{testimonials}">
             <f:then>
                 <div class="mai-testimonials__track" data-testimonials-track="1">
@@ -50,13 +57,13 @@
                         class="mai-testimonials__btn mai-testimonials__btn--prev"
                         data-testimonials-prev="1"
                         aria-label="{f:translate(key: 'slider.prev', extensionName: 'mai_testimonials')}"
-                    >&#8249;</button>
+                    ></button>
                     <button
                         type="button"
                         class="mai-testimonials__btn mai-testimonials__btn--next"
                         data-testimonials-next="1"
                         aria-label="{f:translate(key: 'slider.next', extensionName: 'mai_testimonials')}"
-                    >&#8250;</button>
+                    ></button>
                 </div>
             </f:then>
             <f:else>

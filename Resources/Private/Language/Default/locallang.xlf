@@ -9,6 +9,9 @@
             <trans-unit id="testimonial.author">
                 <source>— {0}, {1}</source>
             </trans-unit>
+            <trans-unit id="slider.region">
+                <source>Testimonial slider</source>
+            </trans-unit>
             <trans-unit id="slider.prev">
                 <source>Previous testimonial</source>
             </trans-unit>
