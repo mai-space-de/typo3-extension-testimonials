@@ -32,9 +32,9 @@ Three Extbase plugins are registered, all in the `maispace_feature` backend grou
 
 | CType identifier | Plugin name | Controller action | Rendering |
 |---|---|---|---|
-| `maispace_testimonials_list` | `MaiTestimonials_List` | `TestimonialsController::listAction` | Responsive grid/list |
-| `maispace_testimonials_slider` | `MaiTestimonials_Slider` | `TestimonialsController::sliderAction` | Auto-playing carousel |
-| `maispace_testimonials_single` | `MaiTestimonials_Single` | `TestimonialsController::singleAction` | Single featured quote |
+| `maitestimonials_list` | `MaiTestimonials_List` | `TestimonialsController::listAction` | Responsive grid/list |
+| `maitestimonials_slider` | `MaiTestimonials_Slider` | `TestimonialsController::sliderAction` | Auto-playing carousel |
+| `maitestimonials_single` | `MaiTestimonials_Single` | `TestimonialsController::singleAction` | Single featured quote |
 
 All three share the same FlexForm (`TestimonialsPlugin.xml`) and the same TypoScript
 base configuration (`plugin.tx_maitestimonials_list`), with Slider and Single inheriting
