@@ -11,6 +11,8 @@ use Maispace\MaiTestimonials\Domain\Repository\TestimonialRepository;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Page\AssetCollector;
 use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Pagination\QueryBuilderPaginator;
+use TYPO3\CMS\Core\Pagination\SimplePagination;
 
 class TestimonialsController extends AbstractActionController
 {
@@ -31,11 +33,22 @@ class TestimonialsController extends AbstractActionController
         $this->assetCollector = $assetCollector;
     }
 
-    public function listAction(): ResponseInterface
+    public function listAction(int $page = 1): ResponseInterface
     {
         $settings = $this->getSettings();
+        $pageUids = $this->resolveStoragePageUids();
+        $categoryUid = (int) ($settings['categoryUid'] ?? 0);
+        $itemsPerPage = (int) ($settings['limit'] ?? 10);
 
-        $testimonials = $this->resolveTestimonials($settings);
+        $queryBuilder = $this->testimonialRepository->createQueryBuilderForPagination($pageUids, $categoryUid);
+
+        $paginator = new QueryBuilderPaginator(
+            $queryBuilder,
+            $page,
+            $itemsPerPage
+        );
+
+        $pagination = new SimplePagination($paginator);
 
         $this->addJsFile(
             'mai_testimonials',
@@ -43,7 +56,10 @@ class TestimonialsController extends AbstractActionController
         );
 
         $this->view->assignMultiple([
-            'testimonials' => $testimonials,
+            'testimonials' => $paginator->getPaginatedItems(),
+            'pagination' => $pagination,
+            'paginator' => $paginator,
+            'currentPage' => $page,
             'settings' => $settings,
         ]);
 
