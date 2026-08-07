@@ -24,6 +24,11 @@ class TestimonialsIndexer extends AbstractIndexer implements SearchResultFormatt
         return 'testimonial';
     }
 
+    public function getTableName(): string
+    {
+        return self::TABLE_NAME;
+    }
+
     public function supports(string $table): bool
     {
         return $table === self::TABLE_NAME;
