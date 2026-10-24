@@ -2,25 +2,35 @@
 
 declare(strict_types=1);
 
+use Maispace\MaiBase\Icon\StreamlineSvgIconProvider;
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
+
+$allIcons = 'EXT:mai_base/Resources/Public/Icons/all-icons/';
+$quote = $allIcons . 'interface-text-formatting-quotation-1--quote-quotation-format-formatting-open-close-marks-text--Streamline-Core.svg';
+
 return [
     'ext-maispace-mai_testimonials' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        'provider' => SvgIconProvider::class,
         'source' => 'EXT:mai_testimonials/Resources/Public/Icons/Extension.svg',
     ],
+    'mai-testimonials' => [
+        'provider' => StreamlineSvgIconProvider::class,
+        'source' => $quote,
+    ],
     'tx_maitestimonials_testimonial' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:mai_base/Resources/Public/Icons/generic_table.svg',
+        'provider' => StreamlineSvgIconProvider::class,
+        'source' => $quote,
     ],
     'maispace_testimonials_slider' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:mai_base/Resources/Public/Icons/generic_content.svg',
+        'provider' => StreamlineSvgIconProvider::class,
+        'source' => $quote,
     ],
     'maispace_testimonials_list' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:mai_base/Resources/Public/Icons/generic_content.svg',
+        'provider' => StreamlineSvgIconProvider::class,
+        'source' => $quote,
     ],
     'maispace_testimonials_single' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:mai_base/Resources/Public/Icons/generic_content.svg',
+        'provider' => StreamlineSvgIconProvider::class,
+        'source' => $quote,
     ],
 ];

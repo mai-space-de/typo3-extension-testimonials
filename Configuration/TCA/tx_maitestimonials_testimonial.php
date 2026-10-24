@@ -15,7 +15,8 @@ return (new Table($lang('table.tx_maitestimonials_testimonial')))
     ->setSearchFields('quote,author_name,organisation')
     ->setDefaultConfig()
     ->setLabel('author_name')
-    ->setIconFile('EXT:mai_base/Resources/Public/Icons/generic_table.svg')
+    ->setIconFile('EXT:mai_base/Resources/Public/Icons/all-icons/interface-text-formatting-quotation-1--quote-quotation-format-formatting-open-close-marks-text--Streamline-Core.svg')
+
     ->setSortingField()
     ->addColumn(
         'quote',
