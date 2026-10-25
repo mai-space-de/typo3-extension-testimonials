@@ -80,8 +80,8 @@ class TestimonialRepository extends Repository
                 ->andWhere(
                     $queryBuilder->expr()->in(
                         'pid',
-                        $queryBuilder->createNamedParameter($pageUids, Connection::PARAM_INT_ARRAY)
-                    )
+                        $queryBuilder->createNamedParameter($pageUids, Connection::PARAM_INT_ARRAY),
+                    ),
                 );
         }
 
@@ -91,16 +91,16 @@ class TestimonialRepository extends Repository
                     'tx_maitestimonials_testimonial',
                     'sys_category_record_mm',
                     'mm',
-                    $queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->quoteIdentifier('tx_maitestimonials_testimonial.uid'))
+                    $queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->quoteIdentifier('tx_maitestimonials_testimonial.uid')),
                 )
                 ->andWhere(
-                    $queryBuilder->expr()->eq('mm.uid_local', $queryBuilder->createNamedParameter($categoryUid, \PDO::PARAM_INT))
+                    $queryBuilder->expr()->eq('mm.uid_local', $queryBuilder->createNamedParameter($categoryUid, \PDO::PARAM_INT)),
                 )
                 ->andWhere(
-                    $queryBuilder->expr()->eq('mm.tablenames', $queryBuilder->createNamedParameter('tx_maitestimonials_testimonial'))
+                    $queryBuilder->expr()->eq('mm.tablenames', $queryBuilder->createNamedParameter('tx_maitestimonials_testimonial')),
                 )
                 ->andWhere(
-                    $queryBuilder->expr()->eq('mm.fieldname', $queryBuilder->createNamedParameter('categories'))
+                    $queryBuilder->expr()->eq('mm.fieldname', $queryBuilder->createNamedParameter('categories')),
                 );
         }
 
