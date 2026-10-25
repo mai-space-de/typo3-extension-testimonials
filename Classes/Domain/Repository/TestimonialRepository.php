@@ -94,7 +94,7 @@ class TestimonialRepository extends Repository
                     $queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->quoteIdentifier('tx_maitestimonials_testimonial.uid')),
                 )
                 ->andWhere(
-                    $queryBuilder->expr()->eq('mm.uid_local', $queryBuilder->createNamedParameter($categoryUid, \PDO::PARAM_INT)),
+                    $queryBuilder->expr()->eq('mm.uid_local', $queryBuilder->createNamedParameter($categoryUid, Connection::PARAM_INT)),
                 )
                 ->andWhere(
                     $queryBuilder->expr()->eq('mm.tablenames', $queryBuilder->createNamedParameter('tx_maitestimonials_testimonial')),
