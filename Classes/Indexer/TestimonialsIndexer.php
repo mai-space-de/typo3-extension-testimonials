@@ -11,7 +11,6 @@ use Maispace\MaiSearch\Indexer\AbstractIndexer;
 use Maispace\MaiTestimonials\Domain\Model\Testimonial;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper;
 
@@ -32,13 +31,6 @@ class TestimonialsIndexer extends AbstractIndexer implements SearchResultFormatt
     public function supports(string $table): bool
     {
         return $table === self::TABLE_NAME;
-    }
-
-    public function indexAll(IndexingContext $context): void
-    {
-        foreach ($this->getRecordsForIndexing($context) as $record) {
-            $this->indexRecord($record, $context);
-        }
     }
 
     public function indexRecord(object $record, IndexingContext $context): void
@@ -92,13 +84,10 @@ class TestimonialsIndexer extends AbstractIndexer implements SearchResultFormatt
         }
 
         try {
-            $site = GeneralUtility::makeInstance(SiteFinder::class)->getSiteByPageId((int) $record->getPid());
-            $uri = $site->getRouter()->generateUri(
+            return $this->generateLanguageAwarePageUri(
                 (int) $record->getPid(),
                 ['uid' => $record->getUid()],
             );
-
-            return (string) $uri;
         } catch (\Exception) {
             return '';
         }
